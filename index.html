@@ -4,12 +4,15 @@
 	<title>Final Project</title>
 	<link rel="stylesheet" href="./css/index.css" media="screen">
 </head>
-<body>
-	<header>&#60;header&#62;</header>
+<body onload="dynamicDateTime()">
+	<header>
+        <img src="./img/logo_icon.png" width="80px" height="80px">
+        <p>Final Project</p>
+    </header>
 	<nav>
 		<form>
-			<input type="text" name="" placeholder="Please ENTER a name or type to search.">
-			<input type="button" name="Search">
+			<input type="text" name="" placeholder="Search...">
+			<input type="button" name="Search" value="Search">
 		</form>
 	</nav>
 	<main>
@@ -23,52 +26,22 @@
 				<div>Content II</div>
 			</section>
 			<section class="side-bar-section">
-				<h2>Section III</h2>
-				<div>Content III</div>
+				<h2>Color Scheme</h2>
+				<div>
+                    <input type="radio" name="color" value="black">Black<br>
+                    <input type="radio" name="color" value="crimson" checked>Crimson<br>
+                    <input type="radio" name="color" value="dodgerblue">Dodger Blue
+                </div>
 			</section>
 		</div>
 		<div id="main-content">
-			<section class="main-content-section">
-				<h2>Section IV</h2>
-				<div>Content IV</div>
-			</section>
-			<section class="main-content-section">
-				<h2>Section V</h2>
-				<div>Content V</div>
-			</section>
-			<section class="main-content-section">
-				<h2>Section VI</h2>
-				<div>Content VI</div>
-			</section>
-			<section class="main-content-section">
-				<h2>Section IV</h2>
-				<div>Content IV</div>
-			</section>
-			<section class="main-content-section">
-				<h2>Section V</h2>
-				<div>Content V</div>
-			</section>
-			<section class="main-content-section">
-				<h2>Section VI</h2>
-				<div>Content VI</div>
-			</section>
-			<section class="main-content-section">
-				<h2>Section IV</h2>
-				<div>Content IV</div>
-			</section>
-			<section class="main-content-section">
-				<h2>Section V</h2>
-				<div>Content V</div>
-			</section>
-			<section class="main-content-section">
-				<h2>Section VI</h2>
-				<div>Content VI</div>
-			</section>	
+
 		</div>
 	</main>
 	<footer>
-		<p>Copyright &copy; Group</p>
-		<p>YYYY-MM-DD HH:MM:SS EEEE</p>
+		<p id="copy-right">Copyright &copy; Group</p>
+		<p id="date-time"></p>
 	</footer>
+    <script src="./js/index.js" type="text/javascript"></script>
 </body>
 </html>
