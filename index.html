@@ -6,14 +6,12 @@
 </head>
 <body onload="dynamicDateTime()">
 	<header>
-        <img src="./img/logo_icon.png" width="80px" height="80px">
+        <img src="./img/logo_icon.png">
         <p>Final Project</p>
     </header>
 	<nav>
-		<form>
-			<input type="text" name="" placeholder="Search...">
-			<input type="button" name="Search" value="Search">
-		</form>
+		<input type="button" name="">
+		<input type="text" name="" placeholder="Search...">
 	</nav>
 	<main>
 		<div id="side-bar">
@@ -28,9 +26,18 @@
 			<section class="side-bar-section">
 				<h2>Color Scheme</h2>
 				<div>
-                    <input type="radio" name="color" value="black">Black<br>
-                    <input type="radio" name="color" value="crimson" checked>Crimson<br>
-                    <input type="radio" name="color" value="dodgerblue">Dodger Blue
+					<div class="radio-div">
+						<input type="radio" name="color">
+						<label>Black</label>
+					</div>
+					<div class="radio-div">
+						<input type="radio" name="color" checked="checked">
+						<label>Crimson</label>
+					</div>
+					<div class="radio-div">
+						<input type="radio" name="color">
+						<label>Dodger Blue</label>
+					</div>
                 </div>
 			</section>
 		</div>
