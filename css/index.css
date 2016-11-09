@@ -1,0 +1,120 @@
+/*undefined*/
+body {
+	background-color: ghostwhite;
+	margin: 0;
+	width: 100%;
+}
+
+header {
+	display: inline-flex;
+	width: 100%;
+	height: 85px;
+	align-items: center;
+}
+
+header img {
+	width: 75px;
+	height: 75px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+header p {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-size: 60px;
+	font-weight: bold;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+nav {
+	background-color: crimson;
+	display: inline-block;
+	width: 100%;
+}
+
+input[type=button] {
+	background-color: crimson;
+	background-image: url('../img/home_icon.png');
+	background-repeat: no-repeat;
+	background-size: 40px;
+	background-position: center;
+	border: 2px solid whitesmoke;
+	border-radius: 5px;
+	cursor: pointer;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;float: right;
+	float: left;
+	width: 46px;
+	height: 46px;
+	margin: 5px;
+	vertical-align: middle;
+}
+
+input[type=text] {
+	background-color: white;
+	background-image: url('../img/search_icon.png');
+	background-repeat: no-repeat;
+	background-size: 30px;
+	background-position: 4px 4px;
+	border: 2px solid whitesmoke;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	float: right;
+	width: 45%;
+	height: 40px;
+	padding-left: 45px;
+	margin: 5px;
+	vertical-align: middle;
+}
+
+main {
+	/*background-color: dodgerblue;*/
+	display: inline-block;
+	width: 100%;
+}
+
+.main-container {
+	background-color: transparent;
+	width: 100%;
+}
+
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	margin: 0;
+	width: 100%;
+	height: 40px;
+	text-align: center;
+}
+
+.main-section-container {
+	display: inline-flex;
+	flex-wrap: wrap;
+	margin: 0;
+	width: 100%;
+}
+
+.main-content-section {
+	background-color: transparent;
+	border: transparent solid 5px;
+	border-radius: 5px;
+	width: 444px;
+	height: 200px;
+}
+
+footer {
+	background-color: crimson;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	width: 100%;
+	align-content: center;
+	vertical-align: middle;
+}
+
+#copy-right, #date-time {
+	margin: 0;
+	text-align: center;
+}
