@@ -3,16 +3,24 @@
 <head>
 	<title>Final Project</title>
 	<link rel="stylesheet" href="./css/index.css" media="screen">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body onload="main()">
 	<header>
-        <img src="./img/logo_icon.png">
+        <i class="fa fa-barcode header" style="font-size: 100px"></i>
         <p>Final Project</p>
     </header>
 	<nav>
-		<input type="button" name="">
-		<input type="text" name="" placeholder="Search...">
-	</nav>
+        <ul class="navbar-list">
+          <li class="navbar-item"><a href="/">Home</a></li>
+          <li class="navbar-item"><a href="/about">About</a></li>
+          <li class="navbar-item navbar-right"><a href="#">Log out</a></li>
+
+		  <input type="text" name="" placeholder="Search...">
+
+        </ul>
+      </nav>
 	<main id="main-container"></main>
 	<footer>
 		<p id="copy-right">Copyright &copy; Group</p>
