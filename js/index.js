@@ -6,25 +6,20 @@ function main() {
 function displayContents() {
     var mainBox = document.getElementById('main-container');
 
-    for (var i = 0; i < 5; i ++) {
-        var contatiner = createMainSection(mainBox, 'Section Title ' + (i + 1), i % 2 == 0);
+    for (var i = 0; i < 2; i ++) {
+        var contatiner = createMainSection(mainBox);
 
-        for (var j = 0; j < 6; j ++) {
+        for (var j = 0; j < 3; j ++) {
             createSectionTable(contatiner, i % 2 == 0);
         }
     }
 }
 
-function createMainSection(box, text, flag) {
+function createMainSection(box, flag) {
     var section = document.createElement('section');
     section.setAttribute('id', 'main-container');
-    section.style.backgroundColor = flag ? "ghostwhite" : "crimson";
+    section.style.backgroundColor = flag ? "ghostwhite" : "#CF6766";
     box.appendChild(section);
-
-    var title = document.createElement('h2');
-    title.innerHTML = text;
-    title.style.color = flag ? 'crimson' : 'ghostwhite';
-    section.appendChild(title);
 
     var container = document.createElement('div');
     container.setAttribute('class', 'main-section-container');
@@ -38,11 +33,11 @@ function createSectionTable(container, flag) {
     section.setAttribute('class', 'main-content-section');
 
     if (flag) {
-        section.style.backgroundColor = 'crimson';
+        section.style.backgroundColor = '#30415D';
         section.style.borderColor = 'ghostwhite';
     } else {
         section.style.backgroundColor = 'ghostwhite';
-        section.style.borderColor = 'crimson';
+        section.style.borderColor = '#30415D';
     }
 
     container.appendChild(section);
