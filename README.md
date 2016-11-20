@@ -1,6 +1,4 @@
 <h1>Final Project</h1>
-<h2>Members Information</h2>
-
 # Members
 
 * Songjian Luan (luans)
