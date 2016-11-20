@@ -1,5 +1,4 @@
 <h1>Final Project</h1>
-<h2>Members Information</h2>
 
 # Members
 
@@ -11,4 +10,11 @@
 
 * Node JS Environment Installation
 * Libraries Installation:
-** JSON: npm install --save jsonfile
+	* JSON: npm install --save jsonfile
+
+# Progress
+
+* Required HTML: Almost Done
+* Required CSS: Almost Done
+* Required JAVASCRIPT: Half to Half
+* Required NODEJS: Starting Build
