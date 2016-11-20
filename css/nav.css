@@ -56,7 +56,7 @@ a:hover {
     background-color: #7cd5d9;
 }
 
-input[type=text] {
+.search-bar input[type=text] {
 	background-color: ghostwhite;
 	background-image: url('../img/search_icon.png');
 	background-repeat: no-repeat;
