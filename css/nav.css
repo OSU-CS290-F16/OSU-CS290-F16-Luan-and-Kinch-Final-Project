@@ -1,0 +1,74 @@
+
+nav {
+    background-color: #303030;
+	display: block;
+}
+
+.menu-bar {
+    align-items: stretch;
+    display: inline;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+}
+
+.drop-menu {
+    display: inline-block;
+}
+
+.drop-menu:hover {
+	display: inline-block;
+}
+
+.drop-menu:hover .drop-menu-item {
+	display: block;
+}
+
+.drop-menu-item {
+	background-color: #404040;
+	display: none;
+	position: absolute;
+	min-width: 165px;
+}
+
+.registe-menu {
+	float: right;
+}
+
+.search-bar {
+	display: inline-block;
+	width: 100%;
+}
+
+a {
+    color: white;
+	display: block;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 18px;
+    text-align: center;
+    padding: 15px 15px;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #7cd5d9;
+}
+
+input[type=text] {
+	background-color: ghostwhite;
+	background-image: url('../img/search_icon.png');
+	background-repeat: no-repeat;
+	background-size: 30px;
+	background-position: 5px 5px;
+	border-color: #303030;
+	border-style: solid;
+	border-width: 5px;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	width: 100%;
+	height: 50px;
+	padding-left: 50px;
+}

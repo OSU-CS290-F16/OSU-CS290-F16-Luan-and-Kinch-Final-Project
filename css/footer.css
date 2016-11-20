@@ -11,5 +11,11 @@ footer {
 
 #copy-right, #date-time {
 	margin: 0;
+	padding: 5px;
 	text-align: center;
+}
+
+.image-demo {
+	align-content: center;
+	width: 100%;
 }
