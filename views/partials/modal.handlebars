@@ -1,0 +1,27 @@
+<div id="modal-backdrop" class="hidden"></div>
+<div id="add-note-modal" class="hidden">
+    <div class="modal-dialog">
+        <div class="modal-header">
+            <h3>Add a ToDo</h3>
+            <button type="button" class="modal-close-button" onclick="closeModal();">&times;</button>
+        </div>
+        <div class="modal-body">
+        <div class="todo-input-element required">
+            <label for="todo-input-cate">Category</label>
+            <input type="text" id="todo-input-cate">
+        </div>
+        <div class="todo-input-element">
+            <label for="todo-input-url">URL</label>
+            <input type="text" id="todo-input-url">
+        </div>
+        <div class="todo-input-element">
+            <label for="todo-input-description">Description</label>
+            <textarea id="todo-input-descritpion"></textarea>
+        </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="modal-cancel-button" onclick="closeModal()">Cancel</button>
+            <button type="button" class="modal-accept-button">Add Category</button>
+        </div>
+    </div>
+</div>
