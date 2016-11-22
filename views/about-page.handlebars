@@ -1,32 +1,6 @@
 {{> header}}
-{{> navbar}}
+{{> about-nav}}
 <main id="about-main-container">
-    <section id="member-section">
-        <div class="member-section-top">
-            <div>NAME: UNDEFINED</div>
-            <div>ONID: UNDEFINED</div>
-        </div>
-        <p>
-            CONTRIBUTIONS UNDEFIEND
-        </p>
-    </section>
-    <section id="member-section">
-        <div class="member-section-top">
-            <div>NAME: UNDEFINED</div>
-            <div>ONID: UNDEFINED</div>
-        </div>
-        <p>
-            CONTRIBUTIONS UNDEFIEND
-        </p>
-    </section>
-    <section id="member-section">
-        <div class="member-section-top">
-            <div>NAME: UNDEFINED</div>
-            <div>ONID: UNDEFINED</div>
-        </div>
-        <p>
-            CONTRIBUTIONS UNDEFIEND
-        </p>
-    </section>
+{{#each about}}{{> about-section this key=@key}}{{/each}}
 </main>
 {{> footer}}

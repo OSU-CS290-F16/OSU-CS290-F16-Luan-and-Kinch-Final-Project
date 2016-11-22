@@ -4,6 +4,8 @@ var express = require('express');
 var exphbs = require('express-handlebars');
 var bodyParser = require('body-parser');
 var db = require('./public/json/prog_db.json');
+var about = require('./public/json/about.json');
+var category = require('./public/json/prog_db.json');
 
 var app = express();
 var port = process.env.PORT || 3000;
@@ -25,13 +27,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res) {
     res.render('index-page', {
-        title: 'CS290 - Final Project'
+        title: 'CS290 - Final Project',
+        categories: category
     });
 });
 
 app.get('/about', function(req, res) {
     res.render('about-page', {
-        title: 'CS290 - Final Project - About'
+        title: 'CS290 - Final Project - About',
+        about: about
     });
 });
 

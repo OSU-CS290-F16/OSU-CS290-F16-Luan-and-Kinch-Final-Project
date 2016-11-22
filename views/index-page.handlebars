@@ -1,7 +1,7 @@
 {{> header}}
-{{> navbar}}
+{{> index-nav}}
 <main id="index-main-container">
-
+{{#each categories}}{{> index-section this key=@key}}{{/each}}
 </main>
 {{> footer}}
 {{> modal}}
