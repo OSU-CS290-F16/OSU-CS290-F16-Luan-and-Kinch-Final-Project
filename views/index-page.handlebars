@@ -1,7 +1,14 @@
 {{> header}}
 {{> index-nav}}
 <main id="index-main-container">
-{{#each categories}}{{> index-section this key=@key}}{{/each}}
+    {{#each categories}}
+        <div class="main-section-container">
+            <div class="section-title">{{name}}</div>
+            <div class="">
+                {{#each images}}{{> index-section}}{{/each}}
+            </div>
+        </div>
+    {{/each}}
 </main>
 {{> footer}}
 {{> modal}}

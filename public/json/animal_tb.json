@@ -1,7 +1,7 @@
 {
     "animal_image_1": {
-        "name": "",
-        "author": "",
+        "name": "animal",
+        "author": "ancestor of animal",
         "description": "",
         "url": ""
     }

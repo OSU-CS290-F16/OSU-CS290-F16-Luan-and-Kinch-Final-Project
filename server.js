@@ -25,10 +25,13 @@ app.set('view engine', 'handlebars');
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+var animal = require('./public/json/animal_tb.json');
+
 app.get('/', function(req, res) {
     res.render('index-page', {
         title: 'CS290 - Final Project',
-        categories: category
+        categories: category,
+        images: animal
     });
 });
 
