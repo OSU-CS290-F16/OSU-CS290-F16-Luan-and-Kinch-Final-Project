@@ -1,5 +1,5 @@
 function displayContents() {
-    var mainBox = document.getElementById('main-container');
+    var mainBox = document.getElementById('index-main-container');
 
     for (var i = 0; i < 4; i ++) {
         var contatiner = createSectionContainer(mainBox, i + 1);
@@ -43,18 +43,22 @@ function createSectionItem(container, flag) {
     container.appendChild(section);
 }
 
-function openModal() {
-    var backdrop = document.getElementById('modal-backdrop');
-    var modal = document.getElementById('add-note-modal');
+function redirectWebpage(event) {
+    var name = event.target.name;
 
-    backdrop.classList.remove('hidden');
-    modal.classList.remove('hidden');
+    switch(name) {
+        case 'home':
+            window.location.href = '/';
+            break;
+        case 'about':
+            window.location.href = '/about';
+    }
 }
 
-function closeModal() {
-    var backdrop = document.getElementById('modal-backdrop');
-    var modal = document.getElementById('add-note-modal');
+window.addEventListener('DOMContentLoaded', function(event) {
+    var redirectItems = document.getElementsByClassName('redirect-item');
 
-    backdrop.classList.add('hidden');
-    modal.classList.add('hidden');
-}
+    for(var i = 0; i < redirectItems.length; i ++) {
+        redirectItems[i].addEventListener('click', redirectWebpage);
+    }
+});

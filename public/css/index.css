@@ -3,7 +3,7 @@ body {
 	margin: 0;
 }
 
-main {
+#index-main-container {
 	display: inline-block;
 	width: 100%;
 }

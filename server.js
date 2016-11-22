@@ -25,7 +25,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res) {
     res.render('index-page', {
-        title: 'Welcome!'
+        title: 'CS290 - Final Project'
+    });
+});
+
+app.get('/about', function(req, res) {
+    res.render('about-page', {
+        title: 'CS290 - Final Project - About'
     });
 });
 

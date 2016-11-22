@@ -1,5 +1,3 @@
-var dynamicDataTime = Handlebars.templates.footer;
-
 function dynamicDateTime() {
 	var date = new Date();
 	var year = date.getFullYear();
