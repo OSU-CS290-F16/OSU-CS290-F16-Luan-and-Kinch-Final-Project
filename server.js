@@ -3,14 +3,13 @@ var path = require('path');
 var express = require('express');
 var exphbs = require('express-handlebars');
 var bodyParser = require('body-parser');
-var db = require('./public/json/prog_db.json');
+var categories = require('./public/json/prog_db.json');
 var about = require('./public/json/about.json');
-var category = require('./public/json/prog_db.json');
 
 var app = express();
 var port = process.env.PORT || 3000;
 
-var data = Object.keys(db);
+var data = Object.keys(categories);
 
 data.forEach(function(id) {
     var tbFile = './json/' + id + '.json';
@@ -25,13 +24,11 @@ app.set('view engine', 'handlebars');
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var animal = require('./public/json/animal_tb.json');
-
 app.get('/', function(req, res) {
     res.render('index-page', {
         title: 'Final Project - Home',
-        categories: category,
-        places: animal
+        categories: categories,
+        table: categories['table']
     });
 });
 

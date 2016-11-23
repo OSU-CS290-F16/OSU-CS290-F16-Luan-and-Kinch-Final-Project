@@ -25,12 +25,21 @@ h2 {
 }
 
 .exhibition-section {
-	background-color: transparent;
-	border: transparent solid 5px;
+	background-color: #303030;
+	border: ghostwhite solid 5px;
 	border-radius: 5px;
+	display: inline-flex;
 	margin: 5px;
-	width: 360px;
+	width: 720px;
 	height: 240px;
+}
+
+.exhibition-section p {
+	color: ghostwhite;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	padding: 5px;
+	text-align: justify;
 }
 
 .category-title {

@@ -4,7 +4,7 @@
     {{#each categories}}
         <div class="exhibition-container">
             <div class="category-title">{{name}}</div>
-            <div class="">{{> exhibition}}</div>
+            <div class="">{{#each table}}{{> exhibition}}{{/each}}</div>
         </div>
     {{/each}}
 </main>
