@@ -1,14 +1,46 @@
 body {
-	background-color: ghostwhite;
 	margin: 0;
+}
+
+main {
+	background-color: #7cd5d9;
+	display: inline-block;
 	width: 100%;
 }
 
-#about-main-container {
-	background-color: #7cd5d9;
+h2 {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	margin: 0;
 	width: 100%;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	height: 40px;
+	text-align: center;
+}
+
+.exhibition-container {
+	display: inline-flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.exhibition-section {
+	background-color: transparent;
+	border: transparent solid 5px;
+	border-radius: 5px;
+	margin: 5px;
+	width: 360px;
+	height: 240px;
+}
+
+.category-title {
+	color: ghostwhite;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	padding: 10px;
+	width: 100%;
+	text-align: justify;
 }
 
 #member-section {

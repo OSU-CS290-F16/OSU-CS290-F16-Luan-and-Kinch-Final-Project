@@ -2,15 +2,15 @@
 
 # Members
 
-* Songjian Luan (luans)
-* Thomas Robert Kinch (kincht)
-* Zachary James Michael Enas (enasz)
+* Songjian Luan (luans@oregonstate.edu)
+* Thomas Robert Kinch (kincht@oregonstate.edu)
+* Zachary James Michael Enas (enasz@oregonstate.edu)
 
-# Dependencies
+# Using NPM
 
-* Node JS Environment Installation
-* Libraries Installation:
-	* JSON: npm install --save jsonfile
+* Install Dependencies: npm install
+* Start Server: npm start
+* Visit Website: localhost:3000
 
 # Progress
 

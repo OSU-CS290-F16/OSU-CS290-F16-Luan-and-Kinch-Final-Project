@@ -29,15 +29,15 @@ var animal = require('./public/json/animal_tb.json');
 
 app.get('/', function(req, res) {
     res.render('index-page', {
-        title: 'CS290 - Final Project',
+        title: 'Final Project - Home',
         categories: category,
-        images: animal
+        places: animal
     });
 });
 
 app.get('/about', function(req, res) {
     res.render('about-page', {
-        title: 'CS290 - Final Project - About',
+        title: 'Final Project - About',
         about: about
     });
 });

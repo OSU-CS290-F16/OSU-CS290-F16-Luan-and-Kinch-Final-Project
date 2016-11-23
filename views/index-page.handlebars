@@ -1,12 +1,10 @@
 {{> header}}
 {{> index-nav}}
-<main id="index-main-container">
+<main>
     {{#each categories}}
-        <div class="main-section-container">
-            <div class="section-title">{{name}}</div>
-            <div class="">
-                {{#each images}}{{> index-section}}{{/each}}
-            </div>
+        <div class="exhibition-container">
+            <div class="category-title">{{name}}</div>
+            <div class="">{{> exhibition}}</div>
         </div>
     {{/each}}
 </main>
