@@ -38,6 +38,8 @@ h2 {
 	color: ghostwhite;
 	font-family: Tahoma, Geneva, sans-serif;
 	font-size: 12px;
+	max-width: 293.34px;
+	margin: 0;
 	padding: 5px;
 	text-align: justify;
 }
@@ -79,11 +81,11 @@ h2 {
     font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	font-weight: normal;
-    height: 200px;
+	height: 200px;
     margin-top: 0;
     margin-bottom: 0;
     padding: 5px;
     word-break: break-all;
     white-space: normal;
-    overflow-y: auto;
+	overflow-y: auto;
 }

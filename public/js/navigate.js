@@ -1,15 +1,3 @@
-function generateExhibition() {
-    var exhibitSection = Handlebars.templates['exhibition'];
-    // var section = exhibitSection({
-    //     exhibitions: [{
-    //         name: 'Name',
-    //         author: 'Author'
-    //     }]
-    // });
-    //
-    // return section;
-}
-
 function redirectWebpage(event) {
     var name = event.target.name;
 
@@ -29,10 +17,6 @@ function redirectWebpage(event) {
 }
 
 window.addEventListener('DOMContentLoaded', function(event) {
-    var exhibitionHTML = generateExhibition();
-    var container = document.querySelector('main');
-    container.insertAdjacentHTML('beforeend', exhibitionHTML);
-
     var redirectItems = document.getElementsByClassName('redirect-item');
 
     for(var i = 0; i < redirectItems.length; i ++) {

@@ -21,8 +21,8 @@ data.forEach(function(id) {
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars');
-app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
     res.render('index-page', {
@@ -46,5 +46,5 @@ app.get('*', function(req, res) {
 });
 
 app.listen(port, function() {
-    console.log('Listening on Port: ', port);
+    console.log('=== Listening on Port: ', port, '===');
 });
