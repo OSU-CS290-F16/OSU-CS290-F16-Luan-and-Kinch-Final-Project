@@ -26,8 +26,8 @@ nav {
 	display: block;
 }
 
-.drop-menu-item {
-	background-color: #404040;
+.drop-menu .drop-menu-item {
+	background-color: #505050;
 	display: none;
 	position: absolute;
 	min-width: 165px;
@@ -35,6 +35,15 @@ nav {
 
 .registe-menu {
 	float: right;
+    display: inline-block;
+}
+
+.registe-menu .drop-menu-item {
+	background-color: #505050;
+	display: none;
+	position: absolute;
+	min-width: 165px;
+    right: 0;
 }
 
 .search-bar {

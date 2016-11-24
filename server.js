@@ -28,7 +28,14 @@ app.get('/', function(req, res) {
     res.render('index-page', {
         title: 'Final Project - Home',
         categories: categories,
+        // userName: 'ALIEN',
         table: categories['table']
+    });
+});
+
+app.get('/login', function(req, res) {
+    res.render('login-page', {
+        title: 'Final Project - Login'
     });
 });
 

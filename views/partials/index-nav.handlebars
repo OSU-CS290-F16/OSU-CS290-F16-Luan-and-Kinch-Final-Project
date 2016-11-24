@@ -8,7 +8,18 @@
                 <a href="#" class="redirect-item" name="about-item">About</a>
             </div>
         </div>
-        <div class="registe-menu"><a href="#">Sign In</a></div>
+        <div class="registe-menu">
+            {{#if userName}}
+                <div class="drop-menu">
+                    <a href="#" class="redirect-item">{{userName}} <i class="fa fa-caret-down"></i></a>
+                    <div class="drop-menu-item">
+                        <a href="/" class="redirect-item">Sign Out</a>
+                    </div>
+                </div>
+            {{else}}
+                <a href="#" class="redirect-item", name="login-btn">Sign In</a>
+            {{/if}}
+        </div>
     </div>
     <div class="search-bar"><input type="text" name="" placeholder="Search..."></div>
 </nav>
