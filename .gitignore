@@ -1,3 +1,4 @@
 node_modules
 npm-debug.log
-public/exhibition-template.js
+
+public/js/*-template.js

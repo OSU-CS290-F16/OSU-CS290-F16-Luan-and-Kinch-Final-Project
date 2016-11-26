@@ -51,7 +51,7 @@ nav {
 	width: 100%;
 }
 
-a {
+nav a {
     color: white;
 	display: block;
 	font-family: Tahoma, Geneva, sans-serif;
@@ -61,7 +61,7 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+nav a:hover {
     background-color: #7cd5d9;
 }
 
