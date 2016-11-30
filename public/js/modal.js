@@ -45,7 +45,7 @@ function addNewCategory(data, url, name, owner, description) {
 
 function acceptInputValues() {
     var inputDatabase = document.getElementById('todo-input-category').value || '';
-    var inputDirectory = document.getElementById('todo-input-category').value || '';
+    var inputDirectory = document.getElementById('todo-input-url').value || '';
     
     var inputName = document.getElementById('input-name').value || '';
     var inputOwner = document.getElementById('input-owner').value || '';
