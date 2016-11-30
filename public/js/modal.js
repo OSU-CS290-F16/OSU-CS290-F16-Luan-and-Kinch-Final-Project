@@ -25,18 +25,19 @@ function clearInputValues() {
     }
 }
 
-function addNewCategory(name, table) {
+function addNewCategory(data, url, name, owner, description) {
     var exhibitionTemplate = Handlebars.templates.exhibition;
     var exhibitionHTML = exhibitionTemplate({
-        // name: name,
-        // owner: owner,
-        // width: width,
-        // height: height,
-        // description: description,
-        // url: url
+         data: data,
+         url: url,
+         name: name,
+         owner: owner,
+         //width: width,
+         //height: height,
+         description: description
     });
     var generateHTML = '<div class="exhibition-container">'
-                    + '<div class="category-title">' + name + '</div>'
+                    + '<div class="category-title">' + data + '</div>'
                     + '<div class="">' + exhibitionHTML + '</div>';
                     + '</div>'
     return generateHTML;
@@ -45,10 +46,19 @@ function addNewCategory(name, table) {
 function acceptInputValues() {
     var inputDatabase = document.getElementById('todo-input-category').value || '';
     var inputDirectory = document.getElementById('todo-input-category').value || '';
+    
+    var inputName = document.getElementById('input-name').value || '';
+    var inputOwner = document.getElementById('input-owner').value || '';
+    var inputDescription = document.getElementById('input-description').value || '';
 
-    if(inputDatabase.trim() && inputDirectory.trim()) {
-
-        var exhibitionHTML = addNewCategory(null, null);
+    if(inputDatabase.trim() && inputDirectory.trim() && inputName.trim()) {
+        var exhibitionHTML = addNewCategory(
+            inputDatabase.trim(),
+            inputDirectory.trim(),
+            inputName.trim(),
+            inputOwner.trim(),
+            inputDescription.trim()
+            );
         var container = document.querySelector('main');
         container.insertAdjacentHTML('beforeend', exhibitionHTML);
 
