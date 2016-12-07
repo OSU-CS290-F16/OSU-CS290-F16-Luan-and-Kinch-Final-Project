@@ -24,6 +24,7 @@
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.6",
-    "handlebars-json": "^1.0.1"
+    "handlebars-json": "^1.0.1",
+    "mongodb": "^2.2.12"
   }
 }
