@@ -9,13 +9,7 @@ var users = require('./public/json/users.json');
 
 var app = express();
 var port = process.env.PORT || 3000;
-// var mongoHost = 'classmongo.engr.oregonstate.edu';
-// var mongoPort = 27017;
-// var mongoUsername = 'luans';
-// var mongoPassword = '7AffEZ2tVPaTmL4';
-// var mongoDBName = 'cs290_luans';
-// var mongoURL = 'mongodb://' + mongoUsername + ':' + mongoPassword + '@' + mongoHost + ':' + mongoPort + '/' + mongoDBName;
-// mongodb://luans:Who&LSj2017@ds059644.mlab.com:59644/cs290db
+// mongodb://luans:123456@ds059644.mlab.com:59644/cs290db
 var mongoHost = 'ds059644.mlab.com';
 var mongoPort = 59644;
 var mongoUsername = 'luans';
@@ -37,8 +31,7 @@ app.get('/', function(req, res) {
         } else {
             res.render('index-page', {
                 title: 'Final Project - Home',
-                categories: tables,
-                // userName: 'ALIEN',
+                categories: tables
             });
         }
     });
@@ -57,10 +50,34 @@ app.get('/about', function(req, res) {
     });
 });
 
-app.get('/people/:person', function(req, res) {
-    res.render('person-page', {
-        title: 'Final Project - Person'
-    });
+app.get('/:validInfo', function(req, res, next) {
+    if (req.params.validInfo) {
+        var items = req.params.validInfo.split(',');
+        var username = items[0];
+        var password = items[1];
+
+        var checkUsername = users['username'];
+        var checkPassword = users['password'];
+        var flag = false;
+
+        for (var i = 0; i < 3; i++) {
+            if (username == checkUsername[i] && password == checkPassword[i]) {
+                flag = true;
+                break;
+            }
+        }
+
+        if (flag) {
+            res.render('person-page', {
+                title: 'Final Project - Person',
+                userName: username
+            });
+        } else {
+            alert('Warning');
+        }
+    } else {
+        next();
+    }
 });
 
 app.get('*', function(req, res) {

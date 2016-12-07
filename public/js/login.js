@@ -1,7 +1,8 @@
 function toLogin() {
     var username = document.getElementById('login-input-username');
     var password = document.getElementById('login-input-password');
-    console.log(username.value, password.value);
+
+    window.location.href = '/' + username.value + ',' + password.value;
 }
 
 window.addEventListener('DOMContentLoaded', function(event) {

@@ -46,7 +46,7 @@ function addNewCategory(data, url, name, owner, description) {
 function acceptInputValues() {
     var inputDatabase = document.getElementById('todo-input-category').value || '';
     var inputDirectory = document.getElementById('todo-input-url').value || '';
-    
+
     var inputName = document.getElementById('input-name').value || '';
     var inputOwner = document.getElementById('input-owner').value || '';
     var inputDescription = document.getElementById('input-description').value || '';
@@ -69,6 +69,12 @@ function acceptInputValues() {
 }
 
 window.addEventListener('DOMContentLoaded', function(event) {
+    var addCategoryItem = document.getElementById('add-note-button');
+
+    if (addCategoryItem) {
+        addCategoryItem.addEventListener('click', displayModalDialog);
+    }
+
     var addCategoryItem = document.getElementById('add-category-item');
 
     if (addCategoryItem) {

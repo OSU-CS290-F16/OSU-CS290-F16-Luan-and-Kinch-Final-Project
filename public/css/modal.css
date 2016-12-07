@@ -9,7 +9,7 @@
   background-color: rgba(0, 0, 0, 0.85);
 }
 
-#add-category-modal {
+#add-category-modal, #add-note-modal {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -116,4 +116,29 @@
 
 .modal-footer .modal-accept-button:hover {
   background-color: #5481e4;
+}
+
+.add-note-button-container {
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    z-index: 10;
+}
+
+#add-note-button, #remove-note-button, #update-note-button {
+    width: 128px;
+    height: 128px;
+    background-color: #7cd5d9;
+    border: none;
+    border-radius: 64px;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.25);
+    color: white;
+    font-size: 72px;
+    font-weight: 200;
+    cursor: pointer;
+    outline: none;
+}
+
+#add-note-button:hover, #remove-note-button:hover, #update-note-button:hover {
+      box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.33);
 }
