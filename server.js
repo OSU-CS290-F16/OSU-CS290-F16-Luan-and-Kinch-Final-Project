@@ -119,10 +119,15 @@ app.post('/:person/to-login', function(req, res, next) {
 
 app.get('/:person', function(req, res, next) {
     if (req.params.person) {
-        res.render('person-page', {
-            title: 'Final Project - Person',
-            userName: req.params.person
-        });
+        progDB.collection('cs290db').find({owner:req.params.person}).toArray(function(err, result) {
+            var images = result;
+            console.log(images);
+            res.render('person-page', {
+                title: 'Final Project - Person',
+                userName: req.params.person,
+                images: images
+            });
+        });        
     } else {
         next();
     }

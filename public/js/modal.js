@@ -36,7 +36,7 @@ function deleteItems(event) {
         var modalElemParent = clickedElemParentParent.parentNode;
         modalElemParent.removeChild(clickedElemParentParent);
     }
-}  
+}
 
 function addNewCategory(name, owner, width, height, description, url) {
     var exhibitionTemplate = Handlebars.templates.exhibition;
@@ -55,7 +55,20 @@ function addNewCategory(name, owner, width, height, description, url) {
 function pullUpdatedImage() {
     var user = document.getElementById('login-user-name').innerHTML;
     user = user.substr(0, user.indexOf('<i class="fa fa-caret-down"></i>'));
-    window.loacation.href = '/' + user;
+    window.location.href = '/' + user;
+    // var postURL = '/' + user + '/to-pull';
+    // var postRequest = new XMLHttpRequest();
+    //
+    // postRequest.open('POST', postURL);
+    // postRequest.setRequestHeader('Content-Type', 'application/json');
+    //
+    // postRequest.addEventListener('load', function(event) {
+    //     if (event.target.status == 200) {
+    //
+    //     }
+    // });
+    //
+    // postRequest.send(JSON.stringify({}));
     // var inputName = document.getElementById('input-name').value || '';
     // var inputOwner = document.getElementById('input-owner').value || '';
     // var inputWidth = document.getElementById('input-width').value || '';
@@ -133,7 +146,7 @@ window.addEventListener('DOMContentLoaded', function(event) {
     if (main) {
         main.addEventListener('click', deleteItems);
     }
-    
+
     if (pushImageButton) {
         pushImageButton.addEventListener('click', displayModalDialog);
     }
