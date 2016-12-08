@@ -48,6 +48,23 @@ h2 {
 
 }
 
+.exhibition-section .dismiss-button {
+  color: ghostwhite;
+  position: relative;
+  font-family: sans-serif;
+  top: 10px;
+  font-size: 30px;
+  display: none;
+  cursor: pointer;
+  text-align: right;
+  height: 30px;
+}
+
+
+.exhibition-section:hover .dismiss-button {
+  display: initial;
+} 
+
 .category-title {
 	color: ghostwhite;
 	font-family: Tahoma, Geneva, sans-serif;
