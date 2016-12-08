@@ -25,6 +25,19 @@ function clearInputValues() {
     }
 }
 
+//Delete items
+function deleteItems(event) {
+    var clickedElem = event.target;
+    var clickedElemParent = event.target.parentNode;
+    var clickedElemParentParent = clickedElemParent.parentNode;
+    //If clicked then remove
+    if (clickedElemParent.classList.contains('dismiss-button') && clickedElemParentParent.classList.contains('exhibition-section')) {
+        console.log('== clicked');
+        var modalElemParent = clickedElemParentParent.parentNode;
+        modalElemParent.removeChild(clickedElemParentParent);
+    }
+}  
+
 function addNewCategory(name, owner, width, height, description, url) {
     var exhibitionTemplate = Handlebars.templates.exhibition;
     var exhibitionHTML = exhibitionTemplate({
@@ -115,6 +128,12 @@ function insertNewImage() {
 window.addEventListener('DOMContentLoaded', function(event) {
     var pushImageButton = document.getElementById('insert-note-button');
 
+      //Delete Item
+    var main = document.querySelector('main');
+    if (main) {
+        main.addEventListener('click', deleteItems);
+    }
+    
     if (pushImageButton) {
         pushImageButton.addEventListener('click', displayModalDialog);
     }
