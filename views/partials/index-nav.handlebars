@@ -1,17 +1,20 @@
 <nav>
     <div class="menu-bar">
         <div class="drop-menu">
-            <a href="#" class="redirect-item" name="menu-item">Menu</a>
+            <a href="/" class="redirect-item" name="menu-item"><b>Final Project<b></a>
+        </div>
+        <div class="drop-menu">
+            <a href="/" class="redirect-item" name="menu-item">Menu</a>
             <div class="drop-menu-item">
-                <a href="#" class="redirect-item" name="home-item">Home</a>
-                {{!-- <a href="#" id="add-category-item">Add New Category/Item</a> --}}
+                <a href="#" id="add-category-item">Add New Category</a>
                 <a href="#" class="redirect-item" name="about-item">About</a>
             </div>
         </div>
+        <div class="search-bar"><input type="text" name="" placeholder="Search..."></div>
         <div class="registe-menu">
             {{#if userName}}
                 <div class="drop-menu">
-                    <a href="#" class="redirect-item" id="login-user-name">{{userName}}<i class="fa fa-caret-down"></i></a>
+                    <a href="#" class="redirect-item">{{userName}} <i class="fa fa-caret-down"></i></a>
                     <div class="drop-menu-item">
                         <a href="/" class="redirect-item">Sign Out</a>
                     </div>
@@ -21,5 +24,4 @@
             {{/if}}
         </div>
     </div>
-    <div class="search-bar"><input type="text" name="" placeholder="Search..."></div>
 </nav>
