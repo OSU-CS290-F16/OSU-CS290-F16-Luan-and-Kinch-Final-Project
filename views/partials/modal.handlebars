@@ -1,37 +1,48 @@
+<div class="add-note-button-container">
+    <button id="update-note-button">&darr;</button>
+    <button id="insert-note-button">&uarr;</button>
+</div>
+
 <div id="modal-backdrop" class="hidden"></div>
 <div id="add-category-modal" class="hidden">
     <div class="modal-dialog">
         <div class="modal-header">
-            <h3>Add a New Category</h3>
+            <h3>Insert New Image</h3>
             <button type="button" class="modal-close-button">&times;</button>
         </div>
         <div class="modal-body">
             <div class="todo-input-element required">
-                <label for="todo-input-category">Database</label>
-                <input type="text" id="todo-input-category">
-            </div>
-            <div class="todo-input-element required">
-                <label for="todo-input-url">Direcoty(url)</label>
-                <input type="text" id="todo-input-url">
-            </div>
-            
-            <div class="todo-input-element required">
                 <label for="input-name">Name</label>
                 <input type="text" id="input-name">
+            </div>
+            <div class="todo-input-element required">
+                <label for="input-type">Type</label>
+                <input type="text" id="input-type">
             </div>
             <div class="todo-input-element required">
                 <label for="input-owner">Owner</label>
                 <input type="text" id="input-owner">
             </div>
             <div class="todo-input-element required">
-                <label for="input-description">Description</label>
-                <input type="text" id="input-description">
+                <label for="input-owner">Width</label>
+                <input type="text" id="input-width">
             </div>
-            
+            <div class="todo-input-element required">
+                <label for="input-owner">Height</label>
+                <input type="text" id="input-height">
+            </div>
+            <div class="todo-input-element required">
+                <label for="todo-input-url">URL</label>
+                <input type="text" id="input-url">
+            </div>
+            <div class="todo-input-element required">
+                <label for="input-description">Description</label>
+                <textarea id="input-description"></textarea>
+            </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="modal-cancel-button">Cancel</button>
-            <button type="button" class="modal-accept-button">Add Category</button>
+            <button type="button" class="modal-accept-button">Insert</button>
         </div>
     </div>
 </div>

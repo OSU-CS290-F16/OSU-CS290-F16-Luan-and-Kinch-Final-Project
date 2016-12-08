@@ -25,54 +25,104 @@ function clearInputValues() {
     }
 }
 
-function addNewCategory(data, url, name, owner, description) {
+function addNewCategory(name, owner, width, height, description, url) {
     var exhibitionTemplate = Handlebars.templates.exhibition;
     var exhibitionHTML = exhibitionTemplate({
-         data: data,
-         url: url,
          name: name,
          owner: owner,
-         //width: width,
-         //height: height,
-         description: description
+         width: width,
+         height: height,
+         description: description,
+         url: url
     });
-    var generateHTML = '<div class="exhibition-container">'
-                    + '<div class="category-title">' + data + '</div>'
-                    + '<div class="">' + exhibitionHTML + '</div>';
-                    + '</div>'
-    return generateHTML;
+
+    return exhibitionHTML;
 }
 
-function acceptInputValues() {
-    var inputDatabase = document.getElementById('todo-input-category').value || '';
-    var inputDirectory = document.getElementById('todo-input-url').value || '';
+function pullUpdatedImage() {
+    var user = document.getElementById('login-user-name').innerHTML;
+    user = user.substr(0, user.indexOf('<i class="fa fa-caret-down"></i>'));
+    window.loacation.href = '/' + user;
+    // var inputName = document.getElementById('input-name').value || '';
+    // var inputOwner = document.getElementById('input-owner').value || '';
+    // var inputWidth = document.getElementById('input-width').value || '';
+    // var inputHeight = document.getElementById('input-height').value || '';
+    // var inputURL = document.getElementById('input-url').value || '';
+    // var inputDescription = document.getElementById('input-description').value || '';
+    //
+    // if(inputDatabase.trim() && inputDirectory.trim() && inputName.trim()) {
+    //     var exhibitionHTML = addNewCategory(
+    //             inputName.trim(),
+    //             inputOwner.trim(),
+    //             inputWidth.trim(),
+    //             inputHeight.trim(),
+    //             inputDescription.trim(),
+    //             inputURL.trim()
+    //         );
+    //     var container = document.querySelector('main');
+    //     container.insertAdjacentHTML('beforeend', exhibitionHTML);
+    // } else {
+    //     alert('WARNING: Please ENTER specific Category and URL of table in database!!!');
+    // }
+}
 
+function pushNewImage(name, type, owner, width, height, description, url, callback) {
+    var postURL = '/' + owner + '/add-image';
+    var postRequest = new XMLHttpRequest();
+
+    postRequest.open('POST', postURL);
+    postRequest.setRequestHeader('Content-Type', 'application/json');
+
+    postRequest.addEventListener('load', function(event) {
+        var error;
+
+        if (event.target.status !== 200) {
+            error = event.target.response;
+        }
+
+        callback(error);
+    });
+
+    postRequest.send(JSON.stringify({
+        name: name,
+        type: type,
+        owner: owner,
+        width: width,
+        height: height,
+        description: description,
+        url: url
+    }));
+}
+
+function insertNewImage() {
     var inputName = document.getElementById('input-name').value || '';
+    var inputType = document.getElementById('input-type').value || '';
     var inputOwner = document.getElementById('input-owner').value || '';
+    var inputWidth = document.getElementById('input-width').value || '';
+    var inputHeight = document.getElementById('input-height').value || '';
+    var inputURL = document.getElementById('input-url').value || '';
     var inputDescription = document.getElementById('input-description').value || '';
 
-    if(inputDatabase.trim() && inputDirectory.trim() && inputName.trim()) {
-        var exhibitionHTML = addNewCategory(
-            inputDatabase.trim(),
-            inputDirectory.trim(),
-            inputName.trim(),
-            inputOwner.trim(),
-            inputDescription.trim()
-            );
-        var container = document.querySelector('main');
-        container.insertAdjacentHTML('beforeend', exhibitionHTML);
+    pushNewImage(inputName, inputType, inputOwner, inputWidth, inputHeight, inputDescription, inputURL, function(err) {
+        if (err) {
+            alert('Error: \n\n' + err);
+        }
+    });
 
-        closeModalDialog();
-    } else {
-        alert('WARNING: Please ENTER specific Category and URL of table in database!!!');
-    }
+    closeModalDialog();
 }
 
 window.addEventListener('DOMContentLoaded', function(event) {
-    var addCategoryItem = document.getElementById('add-note-button');
+    var pushImageButton = document.getElementById('insert-note-button');
 
-    if (addCategoryItem) {
-        addCategoryItem.addEventListener('click', displayModalDialog);
+    if (pushImageButton) {
+        pushImageButton.addEventListener('click', displayModalDialog);
+    }
+
+    var pullImageButton = document.getElementById('update-note-button');
+
+    if (pullImageButton) {
+        pullImageButton.addEventListener('click', pullUpdatedImage);
     }
 
     var addCategoryItem = document.getElementById('add-category-item');
@@ -84,7 +134,7 @@ window.addEventListener('DOMContentLoaded', function(event) {
     var modalAcceptButton = document.querySelector('#add-category-modal .modal-accept-button');
 
     if (modalAcceptButton) {
-        modalAcceptButton.addEventListener('click', acceptInputValues);
+        modalAcceptButton.addEventListener('click', insertNewImage);
     }
 
     var modalCloseButton = document.querySelector('#add-category-modal .modal-close-button');

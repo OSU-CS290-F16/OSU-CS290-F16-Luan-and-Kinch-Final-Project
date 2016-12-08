@@ -24,11 +24,58 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
-    progDB.collection('cs290db').find({}).toArray(function(err, tables) {
+    progDB.collection('cs290db').find({}).toArray(function(err, table) {
         if (err) {
             console.log("Error: Can fetch data from database.");
             res.status(500).send(err);
         } else {
+            var tables = [];
+            var game = {name:"Game World", table:[]};
+            var animal = {name:"Animal World", table:[]};
+            var microbe = {name:"Microbe World", table:[]};
+            var plant = {name:"Plant World", table:[]};
+            var unknown = {name:"Unknown World", table:[]};
+
+            table.forEach(function(item) {
+                switch (item['type']) {
+                    case 'game':
+                        game['table'].push(item);
+                        break;
+                    case 'animal':
+                        animal['table'].push(item);
+                        break;
+                    case 'microbe':
+                        microbe['table'].push(item);
+                        break;
+                    case 'plant':
+                        plant['table'].push(item);
+                        break;
+                    default:
+                        unknown['table'].push(item);
+                        break;
+                }
+            });
+
+            if (game['table'].length > 0) {
+                tables.push(game);
+            }
+
+            if (animal['table'].length > 0) {
+                tables.push(animal);
+            }
+
+            if (microbe['table'].length > 0) {
+                tables.push(microbe);
+            }
+
+            if (plant['table'].length > 0) {
+                tables.push(plant);
+            }
+
+            if (unknown['table'].length > 0) {
+                tables.push(unknown);
+            }
+
             res.render('index-page', {
                 title: 'Final Project - Home',
                 categories: tables
@@ -50,9 +97,9 @@ app.get('/about', function(req, res) {
     });
 });
 
-app.get('/:validInfo', function(req, res, next) {
-    if (req.params.validInfo) {
-        var items = req.params.validInfo.split(',');
+app.get('/:person', function(req, res, next) {
+    if (req.params.person) {
+        var items = req.params.person.split(',');
         var username = items[0];
         var password = items[1];
 
@@ -72,11 +119,19 @@ app.get('/:validInfo', function(req, res, next) {
                 title: 'Final Project - Person',
                 userName: username
             });
-        } else {
-            alert('Warning');
         }
     } else {
         next();
+    }
+});
+
+app.post('/:person/add-image', function(req, res, next) {
+    if (req.body) {
+        progDB.collection('cs290db').insertOne({name:req.body.name, type:req.body.type, owner:req.body.owner, width:req.body.width, height:req.body.height, url:req.body.url, description:req.body.description}, function(err, result) {
+            if (err) {
+                res.status(500).send("Error: Fail to insert a new image: \n\n" + err);
+            }
+        });
     }
 });
 
