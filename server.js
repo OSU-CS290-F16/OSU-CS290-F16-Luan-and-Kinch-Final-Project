@@ -10,6 +10,7 @@ var users = require('./public/json/users.json');
 var app = express();
 var port = process.env.PORT || 3000;
 // mongodb://luans:123456@ds059644.mlab.com:59644/cs290db
+// mongo ds059644.mlab.com:59644/cs290db -u luans -p 123456
 var mongoHost = 'ds059644.mlab.com';
 var mongoPort = 59644;
 var mongoUsername = 'luans';
@@ -97,29 +98,31 @@ app.get('/about', function(req, res) {
     });
 });
 
+app.post('/:person/to-login', function(req, res, next) {
+    var username = req.body['username'];
+    var password = req.body['password'];
+    var checkUsername = users['username'];
+    var checkPassword = users['password'];
+    var flag = false;
+
+    for (var i = 0; i < 3; i++) {
+        if (username == checkUsername[i] && password == checkPassword[i]) {
+            flag = true;
+            break;
+        }
+    }
+
+    if (flag) {
+        res.redirect('/' + username);
+    }
+});
+
 app.get('/:person', function(req, res, next) {
     if (req.params.person) {
-        var items = req.params.person.split(',');
-        var username = items[0];
-        var password = items[1];
-
-        var checkUsername = users['username'];
-        var checkPassword = users['password'];
-        var flag = false;
-
-        for (var i = 0; i < 3; i++) {
-            if (username == checkUsername[i] && password == checkPassword[i]) {
-                flag = true;
-                break;
-            }
-        }
-
-        if (flag) {
-            res.render('person-page', {
-                title: 'Final Project - Person',
-                userName: username
-            });
-        }
+        res.render('person-page', {
+            title: 'Final Project - Person',
+            userName: req.params.person
+        });
     } else {
         next();
     }

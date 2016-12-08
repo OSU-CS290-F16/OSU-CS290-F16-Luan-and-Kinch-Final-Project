@@ -1,8 +1,22 @@
 function toLogin() {
-    var username = document.getElementById('login-input-username');
-    var password = document.getElementById('login-input-password');
+    var username = document.getElementById('login-input-username').value;
+    var password = document.getElementById('login-input-password').value;
+    var postURL = '/' + username + '/to-login';
+    var postRequest = new XMLHttpRequest();
 
-    window.location.href = '/' + username.value + ',' + password.value;
+    postRequest.open('POST', postURL);
+    postRequest.setRequestHeader('Content-Type', 'application/json');
+
+    postRequest.addEventListener('load', function(event) {
+        if (event.target.status == 200) {
+            window.location.href = '/' + username;
+        }
+    });
+
+    postRequest.send(JSON.stringify({
+        username: username,
+        password: password
+    }));
 }
 
 window.addEventListener('DOMContentLoaded', function(event) {
