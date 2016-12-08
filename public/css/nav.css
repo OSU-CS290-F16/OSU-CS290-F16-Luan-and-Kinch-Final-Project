@@ -1,7 +1,8 @@
-
 nav {
     background-color: #303030;
 	display: block;
+	font-family: 'Sacramento', cursive;
+	font-size: 25px;
 }
 
 .menu-bar {
@@ -48,20 +49,19 @@ nav {
 
 .search-bar {
 	display: inline-block;
-	width: 100%;
+	padding-left: 550px;
+	width: 70%;
 }
 
-nav a {
+a {
     color: white;
 	display: block;
-	font-family: Tahoma, Geneva, sans-serif;
-	font-size: 18px;
     text-align: center;
     padding: 15px 15px;
     text-decoration: none;
 }
 
-nav a:hover {
+a:hover {
     background-color: #7cd5d9;
 }
 
@@ -69,8 +69,8 @@ nav a:hover {
 	background-color: ghostwhite;
 	background-image: url('../img/search_icon.png');
 	background-repeat: no-repeat;
-	background-size: 30px;
-	background-position: 5px 5px;
+	background-size: 20px;
+	background-position: 10px 10px;
 	border-color: #303030;
 	border-style: solid;
 	border-width: 5px;
