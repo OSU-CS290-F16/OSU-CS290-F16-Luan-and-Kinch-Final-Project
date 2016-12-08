@@ -3,15 +3,16 @@ body {
 }
 
 main {
-	background-color: #7cd5d9;
+	background-color: #4D2C3D;
 	display: inline-block;
+  	flex-wrap: wrap;
 	width: 100%;
 }
 
 h2 {
 	font-family: Tahoma, Geneva, sans-serif;
 	font-size: 24px;
-	font-weight: bold;
+
 	margin: 0;
 	width: 100%;
 	height: 40px;
@@ -19,60 +20,60 @@ h2 {
 }
 
 .exhibition-container {
-	display: inline-flex;
-	flex-wrap: wrap;
+	display: inline-block;
 	width: 100%;
 }
 
 .exhibition-section {
-	background-color: #303030;
-	border: ghostwhite solid 5px;
 	border-radius: 5px;
-	display: inline-flex;
-	margin: 5px;
-	width: 720px;
-	height: 240px;
+	position: relative;
+	min-height: 254px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-size: 24px;
+	font-weight: 200;
+	word-wrap: break-word;
 }
 
 .exhibition-section p {
 	color: ghostwhite;
-	font-family: Tahoma, Geneva, sans-serif;
-	font-size: 12px;
-	max-width: 293.34px;
-	margin: 0;
-	padding: 5px;
-	text-align: justify;
+	font-family: 'Cambo', Geneva, sans-serif;
+	font-size: 14px;
+	text-align: left;
+	width: 100%;
 }
 
-.exhibition-section a {
-
+.item-body {
+	padding: 0 20px
 }
 
-.exhibition-section .dismiss-button {
-  color: ghostwhite;
-  position: relative;
-  font-family: sans-serif;
-  top: 10px;
-  font-size: 30px;
-  display: none;
-  cursor: pointer;
-  text-align: right;
-  height: 30px;
+img {
+	padding-top: 5px;
+	position: relative;
+	width: 100%;
+	height: auto;
 }
 
+img:hover {
+	padding-top: 5px;
+	position: relative;
+	width: 100%;
+	height: auto;
+	opacity: 0.6;
+    -webkit-filter:grayscale(75%);
+    filter:grayscale(75%)
+}
 
-.exhibition-section:hover .dismiss-button {
-  display: initial;
-} 
 
 .category-title {
 	color: ghostwhite;
-	font-family: Tahoma, Geneva, sans-serif;
-	font-size: 24px;
+	background-color: #CDA34F;
+	font-family: 'Sacramento', cursive;
+	font-size: 50px;
 	font-weight: bold;
 	padding: 10px;
 	width: 100%;
-	text-align: justify;
+	height: auto;
+	text-align: center;
 }
 
 #member-section {
