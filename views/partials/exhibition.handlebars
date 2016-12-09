@@ -1,11 +1,10 @@
-<section class="exhibition-section">
+<section class="col-md-4 exhibition-section">
     <a href="{{url}}"><img src="{{url}}" alt="" width="426.66px" height="240px"></a>
-    <div class="">
-        <p>ID: {{_id}}</p>
-        <p>NAME: {{name}}</p>
-        <p>OWNER: {{owner}}</p>
-        <p>SIZE: {{width}} * {{height}}</p>
-        <p>DESCRIPTION: {{description}}</p>
+    <div class="item-body">
+        <p class="indent-wrapped">NAME: {{name}}</p>
+        <p class="indent-wrapped">OWNER: {{owner}}</p>
+        <p class="indent-wrapped">SIZE: {{width}} * {{height}}</p>
+        <p class="indent-wrapped">DESCRIPTION: {{description}}</p>
     </div>
     
     <div class="dismiss-button" onclick="deleteItem('{{_id}}')">X</div>
