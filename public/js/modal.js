@@ -25,19 +25,6 @@ function clearInputValues() {
     }
 }
 
-//Delete items
-function deleteItems(event) {
-    var clickedElem = event.target;
-    var clickedElemParent = event.target.parentNode;
-    var clickedElemParentParent = clickedElemParent.parentNode;
-    //If clicked then remove
-    if (clickedElemParent.classList.contains('dismiss-button') && clickedElemParentParent.classList.contains('exhibition-section')) {
-        console.log('== clicked');
-        var modalElemParent = clickedElemParentParent.parentNode;
-        modalElemParent.removeChild(clickedElemParentParent);
-    }
-}
-
 function addNewCategory(name, owner, width, height, description, url) {
     var exhibitionTemplate = Handlebars.templates.exhibition;
     var exhibitionHTML = exhibitionTemplate({
@@ -56,19 +43,6 @@ function pullUpdatedImage() {
     var user = document.getElementById('login-user-name').innerHTML;
     user = user.substr(0, user.indexOf('<i class="fa fa-caret-down"></i>'));
     window.location.href = '/' + user;
-    // var postURL = '/' + user + '/to-pull';
-    // var postRequest = new XMLHttpRequest();
-    //
-    // postRequest.open('POST', postURL);
-    // postRequest.setRequestHeader('Content-Type', 'application/json');
-    //
-    // postRequest.addEventListener('load', function(event) {
-    //     if (event.target.status == 200) {
-    //
-    //     }
-    // });
-    //
-    // postRequest.send(JSON.stringify({}));
     // var inputName = document.getElementById('input-name').value || '';
     // var inputOwner = document.getElementById('input-owner').value || '';
     // var inputWidth = document.getElementById('input-width').value || '';
@@ -100,13 +74,9 @@ function pushNewImage(name, type, owner, width, height, description, url, callba
     postRequest.setRequestHeader('Content-Type', 'application/json');
 
     postRequest.addEventListener('load', function(event) {
-        var error;
-
-        if (event.target.status !== 200) {
-            error = event.target.response;
+        if (event.target.status == 200) {
+            window.location.href='/';
         }
-
-        callback(error);
     });
 
     postRequest.send(JSON.stringify({
@@ -117,6 +87,24 @@ function pushNewImage(name, type, owner, width, height, description, url, callba
         height: height,
         description: description,
         url: url
+    }));
+}
+
+function deleteItem(id) {
+    var postURL = '/delete-item';
+    var postRequest = new XMLHttpRequest();
+
+    postRequest.open('POST', postURL);
+    postRequest.setRequestHeader('Content-Type', 'application/json');
+    
+    postRequest.addEventListener('load', function(event) {
+        if (event.target.status == 200) {
+            window.location.href='/';
+        }
+    });
+
+    postRequest.send(JSON.stringify({
+        _id: id
     }));
 }
 
@@ -141,12 +129,7 @@ function insertNewImage() {
 window.addEventListener('DOMContentLoaded', function(event) {
     var pushImageButton = document.getElementById('insert-note-button');
 
-      //Delete Item
-    var main = document.querySelector('main');
-    if (main) {
-        main.addEventListener('click', deleteItems);
-    }
-
+    
     if (pushImageButton) {
         pushImageButton.addEventListener('click', displayModalDialog);
     }
