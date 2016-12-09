@@ -140,7 +140,19 @@ app.post('/:person/add-image', function(req, res, next) {
                 res.status(500).send("Error: Fail to insert a new image: \n\n" + err);
             }
         });
+        res.status(200).send();
     }
+});
+
+app.post('/delete-item', function(req, res) {
+    progDB.collection('cs290db', {}, function(err, contacts) {
+        contacts.remove({_id: ObjectID(req.body._id)}, function(err, result) {
+            if (err) {
+                console.log(err);
+            }
+        });
+    });
+    res.status(200).send();
 });
 
 app.get('*', function(req, res) {
