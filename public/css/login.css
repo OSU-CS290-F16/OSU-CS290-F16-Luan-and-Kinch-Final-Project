@@ -8,7 +8,7 @@
 
 .login-form label {
     color: ghostwhite;
-    font-family: Tahoma, Geneva, sans-serif;
+    font-family: 'Sacramento', Geneva, sans-serif;
 	font-size: 36px;
 }
 
@@ -17,11 +17,12 @@
     border-radius: 5px;
     border-style: solid;
     border-width: thick;
-    color: #3030303;
+    color: #303030;
     font-family: Tahoma, Geneva, sans-serif;
 	font-size: 36px;
     margin: 25px;
     padding: 5px;
+    font-weight: normal;
 }
 
 .login-form-footer {
@@ -37,7 +38,8 @@
     border-width: thick;
     cursor: pointer;
     font-family: Tahoma, Geneva, sans-serif;
-	font-size: 36px;
+	font-size: 26px;
+    font-weight: normal;
     margin: 25px;
     padding: 5px;
     width: 50%;

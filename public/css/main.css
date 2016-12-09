@@ -3,15 +3,15 @@ body {
 }
 
 main {
-	background-color: #7cd5d9;
+	background-color: #1F1926;
 	display: inline-block;
+  	flex-wrap: wrap;
 	width: 100%;
 }
 
 h2 {
 	font-family: Tahoma, Geneva, sans-serif;
 	font-size: 24px;
-	font-weight: bold;
 	margin: 0;
 	width: 100%;
 	height: 40px;
@@ -19,65 +19,67 @@ h2 {
 }
 
 .exhibition-container {
-	display: inline-flex;
-	flex-wrap: wrap;
+	display: inline-block;
 	width: 100%;
 }
 
-.exhibition-section {
-	background-color: #303030;
-	border: ghostwhite solid 5px;
-	border-radius: 5px;
-	display: inline-flex;
-	margin: 5px;
-	width: 720px;
-	height: 240px;
+.item-body {	z-index: 1;
+	background-color: #555555;
+	position: relative;
+	min-height: 254px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-size: 24px;
+	font-weight: 200;
+	word-wrap: break-word;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 .exhibition-section p {
 	color: ghostwhite;
-	font-family: Tahoma, Geneva, sans-serif;
-	font-size: 12px;
-	max-width: 293.34px;
-	margin: 0;
-	padding: 5px;
-	text-align: justify;
-    width:250px
+	font-family: 'Cambo', Geneva, sans-serif;
+	font-size: 16px;
+	text-align: center;
+	width: 100%;
 }
 
-.exhibition-section a {
-
-
-
+img {
+	position: relative;
+	border-radius: 5px; 
+	width: 90%;
+	position: relative;
+	align-items: center;
+	left: 20px;
 }
-
 
 .exhibition-section .dismiss-button {
-  color: ghostwhite;
-  position: relative;
-  font-family: sans-serif;
-  top: 10px;
-  font-size: 30px;
-  display: none;
-  cursor: pointer;
-  text-align: right;
-  height: 30px;
+	color: ghostwhite;
+	position: relative;
+	font-family: sans-serif;
+	float: right;
+	right: 5px;
+	font-size: 30px;
+	cursor: pointer;
+	display: hidden;
+	opacity: 0.3;
 }
 
-
-.exhibition-section:hover .dismiss-button {
-  display: initial;
+.dismiss-button:hover {
+  	opacity: 1.0;
 } 
-
  
 .category-title {
 	color: ghostwhite;
-	font-family: Tahoma, Geneva, sans-serif;
-	font-size: 24px;
+	background-color: #AB9353;
+	font-family: 'Sacramento', cursive;
+	font-size: 50px;
 	font-weight: bold;
 	padding: 10px;
 	width: 100%;
-	text-align: justify;
+	height: auto;
+	text-align: center;
 }
 
 #member-section {
